@@ -9,7 +9,14 @@ def user_choice():
     print(total_price)
 
     print(Back.BLUE + "Food Choices: ")
-    print(food_choice)
+    for starter in startersop:
+        print(starter.title)
+    for main in mainsop:
+        print(main.title)
+    for dessert in dessertsop:
+        print(dessert.title)
+    for snack in snacksop:
+        print(snack.title)
 
     print(Back.BLACK + """
 [1] Starter
@@ -22,87 +29,55 @@ def user_choice():
     return input("> ")
 
 
-def starters():
-    input("Starter: ")  #User inputs starter
-    starterschoice.append(food_choice)
+def starter():
+    startersop = input("Starter: ")
+    startersop.append(startersop)
 
 
-def mains():
-    input("Main: ") #User inputs main
-    mains.append(food_choice)
+def main():
+    mainsop = input("Main: ")
+    mainsop.append(mainsop)
 
 def dessert():
-    input("Dessert: ") #User inputs dessert
-    dessert.append(food_choice)
+    dessertsop = input("Dessert: ")
+    dessertsop.append(dessertsop)
 
-def snacks():
-    input("Snacks: ") #User inputs snacks
-    snacks.append(food_choice)
+def snack():
+    snacksop = input("Snacks: ")
+    snacksop.append(snacksop)
 
 
 #Functions
 
-total_price = []
+total_price = 0
 
 choice = []
 
-food_choice = []
+startersop = []
+
+mainsop = []
+
+dessertsop =[]
+
+snacksop = []
+
+startprice = 0
+
+mainprice = 0
+
+dessertprice = 0
+
+snackprice = 0
 
 while choice != "q": #When "q" is not pressed, it continues to run the code below
 
     choice = user_choice()
 
     if choice == '1':
-        starters()
+        starter()
     elif choice == '2':
-        mains()
+        main()
     elif choice == '3':
         dessert()
     elif choice == '4':
-        snacks()
-
-#Food pricing
-
-#Starter prices
-
-tomato_soup = 2.00
-french_onion_soup = 2.50
-tomato_salad = 2.90
-chicken_salad = 3.30
-
-#Main prices
-
-german_sausage = 6.50
-grilled_fish = 6.25
-pizza = 4.85
-thai_chicken = 5.95
-veg_pasta = 4.85
-roast_chicken = 5.95
-
-#Dessert prices
-
-fruit_salad = 2.25
-ice_cream = 2.00
-lemon_cake = 2.25
-chocolate_cake = 2.25
-biscuits = 2.50
-
-#Drink prices
-
-water = 1.00
-orange_juice = 1.25
-soft_drinks = 1.30
-tea = 0.90
-irish_coffee = 0.90
-
-#Snack prices
-
-cheese_burger = 3.20
-veg_omelette = 3.25
-cheese_tomato_sandwich = 3.25
-burger = 2.90
-chicken_sandwich = 3.50
-cheese_omelette = 3.50
-
-#Food price appending
-
+        snack()
