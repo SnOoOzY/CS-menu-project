@@ -1,17 +1,8 @@
-const starter = prompt("Starter: ");
-
-const main = prompt("Main: ");
-
-const dessert = prompt("Dessert: ");
-
-const snacks = prompt("Snacks: ");
-
-
 
 
 function starters() {
 
-    let startop = starter.valueOf;
+    let startop = document.getElementById("startsop").value;
 
     let startprice = 0;
 
@@ -34,7 +25,7 @@ function starters() {
 
 function mains() {
 
-    let mainop = main.valueOf;
+    let mainop = document.getElementById("mainsop").value;
 
     let mainprice = 0;
 
@@ -58,7 +49,7 @@ function mains() {
 
 function desserts() {
 
-    let dessertop = dessert.valueOf;
+    let dessertop = document.getElementById("dessertsop").value;
 
     let dessertprice = 0;
 
@@ -79,7 +70,7 @@ function desserts() {
 
 function snack() {
 
-    let snackop = snacks.valueOf
+    let snackop = document.getElementById("snacksop").value;
 
     let snackprice = 0;
 
