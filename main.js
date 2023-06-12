@@ -1,5 +1,5 @@
 function total() {
-    const totalprice = startprice + mainprice + dessertprice + snackprice;
+    const totalprice = (startprice + mainprice + dessertprice + snackprice);
 
     document.getElementById("totalprice").innerHTML = totalprice;
 }
@@ -7,7 +7,7 @@ function total() {
 
 function starters() {
 
-    let startop = document.getElementById("startsop").value;
+    let startop = document.getElementById("starterop").value;
 
     let startprice = 0;
 
@@ -98,3 +98,7 @@ function snack() {
         return;
     }
 }
+
+process.on('uncaughtException', function (err) {
+    console.log(err);
+}); 
