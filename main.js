@@ -1,27 +1,45 @@
-function total() {
-    const totalprice = (startprice + mainprice + dessertprice + snackprice);
+let startprice = 0;
 
-    document.getElementById("totalprice").innerHTML = totalprice;
+let mainprice = 0;
+
+let dessertprice = 0;
+
+let snackprice = 0;
+
+let totalprice = 0;
+
+const startop = document.getElementById("startersop").value;
+
+const mainop = document.getElementById("mainsop").value;
+
+const dessertop = document.getElementById("dessertsop").value;
+
+const snackop = document.getElementById("snacksop").value;
+
+
+function total() {
+
+    if (totalprice = 0) {
+        document.getElementById("totalprice").innerHTML = "0";
+    } else if (totalprice) {
+        document.getElementById("totalprice").innerHTML = startprice + mainprice + dessertprice + snackprice;
+    }
 }
 
 
 function starters() {
 
-    let startop = document.getElementById("starterop").value;
-
-    let startprice = 0;
-
     if (startop = "tomato soup") {
-        startprice + 2.00;
+        startprice += 2.00;
         return startprice;
     } else if (startop = "french onion soup"){
-        startprice + 2.50;
+        startprice += 2.50;
         return startprice;
     } else if (startop = "tomato salad") {
-        startprice + 2.90;
+        startprice += 2.90;
         return startprice;
     } else if (startop = "chicken salad") {
-        startprice + 3.30;
+        startprice += 3.30;
         return startprice;
     } else {
         return;
@@ -30,21 +48,17 @@ function starters() {
 
 function mains() {
 
-    let mainop = document.getElementById("mainsop").value;
-
-    let mainprice = 0;
-
     if (mainop = "german sausage and chips") {
-        mainprice + 6.50;
+        mainprice += 6.50;
         return mainprice;
     } else if (mainop = "grilled fish and potatoes") {
-        mainprice + 6.25; 
+        mainprice += 6.25; 
         return mainprice;
     } else if (mainop = "italian cheese and tomato pizza" || "vegetable pasta") {
-        mainprice + 4.85;
+        mainprice += 4.85;
         return mainprice;
     } else if (mainop = "thai chicken and rice" || "roast chicken and potatoes") {
-        mainprice + 5.95;
+        mainprice += 5.95;
         return mainprice;
     } else {
         return;
@@ -54,18 +68,14 @@ function mains() {
 
 function desserts() {
 
-    let dessertop = document.getElementById("dessertsop").value;
-
-    let dessertprice = 0;
-
     if (dessertop = "fruit salad and cream" || "lemon cake" || "chocolate cake") {
-        dessertprice + 2.25;
+        dessertprice += 2.25;
         return dessertprice;
     } else if (dessertop = "ice cream") {
-        dessertprice + 2.00;
+        dessertprice += 2.00;
         return dessertprice;
     } else if (dessertop = "cheese and biscuits") {
-        dessertprice + 2.50;
+        dessertprice += 2.50;
         return dessertprice;
     } else {
         return;
@@ -75,24 +85,20 @@ function desserts() {
 
 function snack() {
 
-    let snackop = document.getElementById("snacksop").value;
-
-    let snackprice = 0;
-
     if (snackop = "chicken sandwich" || "cheese omelette") {
-        snackprice + 3.50;
+        snackprice += 3.50;
         return snackprice;
     } else if (snackop = "vegetable omelette" || "cheese and tomato sandwich") {
-        snackprice + 3.25;
+        snackprice += 3.25;
         return snackprice;
     } else if (snackop = "burger") {
-        snackprice + 2.90;
+        snackprice += 2.90;
         return snackprice;
     } else if (snackop = "chocolate cake") {
-        snackprice + 2.25;
+        snackprice += 2.25;
         return snackprice;
     } else if (snackop = "cheese burger") {
-        snackprice + 3.20;
+        snackprice += 3.20;
         return snackprice;
     } else {
         return;
