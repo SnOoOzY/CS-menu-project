@@ -1,105 +1,95 @@
-function starters() {
+var startprice = 0; /* Sets startprice's default value to 0 */
+var mainprice = 0; /* Sets mainprice's default value to 0 */
+var dessertprice = 0; /* Sets dessertprice's default value to 0 */
+var snackprice = 0; /* Sets snackprice's default value to 0 */
 
-    var startop = document.getElementById("startersop").value;
-
-    startprice = [0];
+function starters() { /* Declares a function for starters */
+    var startop = document.getElementById("startersop").value; /* sets the value of startop as the value of the starter option */
 
     if (startop == "tomato soup") {
-        let startprice = 2.00;
-        return startprice;
-    } else if (startop == "french onion soup"){
-        let startprice = 2.50;
-        return startprice;
+        startprice = 2.00; /* If the starter option has the value of tomato soup, set the startprice element to have a value of 2.00 */
+    } else if (startop == "french onion soup") {
+        startprice = 2.50;
     } else if (startop == "tomato salad") {
-        let startprice = 2.90;
-        return startprice;
+        startprice = 2.90;
     } else if (startop == "chicken salad") {
-        let startprice = 3.30;
-        return startprice;
+        startprice = 3.30;
     } else {
-        return;
+        startprice = 0; /* If the starter option has no valid value, it sets the value of the startprice element to 0 */
     }
-}
 
+    return startprice;
+}
 
 function mains() {
-
     var mainop = document.getElementById("mainsop").value;
 
-    mainprice = [0];
-
     if (mainop == "german sausage and chips") {
-        let mainprice = 6.50;
-        return mainprice;
+        mainprice = 6.50;
     } else if (mainop == "grilled fish and potatoes") {
-        let mainprice = 6.25; 
-        return mainprice;
-    } else if (mainop == "italian cheese and tomato pizza" || "vegetable pasta") {
-        let mainprice = 4.85;
-        return mainprice;
-    } else if (mainop == "thai chicken and rice" || "roast chicken and potatoes") {
-        let mainprice = 5.95;
-        return mainprice;
+        mainprice = 6.25;
+    } else if (mainop == "italian cheese and tomato pizza") {
+        mainprice = 4.85;
+    } else if (mainop == "vegetable pasta") {
+        mainprice = 4.85;
+    } else if (mainop == "thai chicken and rice") {
+        mainprice = 5.95;
+    } else if (mainop == "roast chicken and potatoes") {
+        mainprice = 5.95;
     } else {
-        return;
+        mainprice = 0;
     }
-}
 
+    return mainprice;
+}
 
 function desserts() {
-
     var dessertop = document.getElementById("dessertsop").value;
 
-    let dessertprice = [0, 2.25, 2.00, 2.50];
-    
-    if (dessertop == "fruit salad and cream" || "lemon cake" || "chocolate cake") {
-        document.getElementById("dessertpricedisplay").innerHTML = (dessertprice[1]);
-        return dessertprice;
+    if (dessertop == "fruit salad and cream") {
+        dessertprice = 2.25;
+    } else if (dessertop == "lemon cake") {
+        dessertprice = 2.00;
+    } else if (dessertop == "chocolate cake") {
+        dessertprice = 2.50;
     } else if (dessertop == "ice cream") {
-        document.getElementById("dessertpricedisplay").innerHTML = (dessertprice[2]);
-        return dessertprice;
+        dessertprice = 2.00;
     } else if (dessertop == "cheese and biscuits") {
-        document.getElementById("dessertpricedisplay").innerHTML = (dessertprice[3]);
-        return dessertprice;
+        dessertprice = 2.50;
     } else {
-        document.getElementById("dessertpricedisplay").innerHTML = (dessertprice[0]);
-        return;
+        dessertprice = 0;
     }
-}
 
+    return dessertprice;
+}
 
 function snack() {
-
     var snackop = document.getElementById("snacksop").value;
 
-    snackprice = [0];
-
-    if (snackop == "chicken sandwich" || "cheese omelette") {
-        let snackprice = 3.50;
-        return snackprice;
-    } else if (snackop == "vegetable omelette" || "cheese and tomato sandwich") {
-        let snackprice = 3.25;
-        return snackprice;
+    if (snackop == "chicken sandwich" || snackop == "cheese omelette") {
+        snackprice = 3.50;
+    } else if (snackop == "vegetable omelette" || snackop == "cheese and tomato sandwich") {
+        snackprice = 3.25;
     } else if (snackop == "burger") {
-        let snackprice = 2.90;
-        return snackprice;
+        snackprice = 2.90;
     } else if (snackop == "chocolate cake") {
-        let snackprice = 2.25;
-        return snackprice;
+        snackprice = 2.25;
     } else if (snackop == "cheese burger") {
-        let snackprice = 3.20;
-        return snackprice;
+        snackprice = 3.20;
     } else {
-        return;
+        snackprice = 0;
     }
+
+    return snackprice;
 }
 
+function total() { /* This function is used to add up all the values of each course, then to display that total value through a HTML element */
+    starters();
+    mains();
+    desserts();
+    snack();
 
-function total() {
+    var totalprice = startprice + mainprice + dessertprice + snackprice;
 
-    var totalprice = (startprice + mainprice + dessertprice + snackprice);
-    
-    document.getElementById("totalprice").innerHTML = totalprice;
-
+    document.getElementById("totalprice").innerHTML = "£" + totalprice.toFixed(2); /* Finds the "totalprice" element in the HTML code and sets its value to the totalprice value. the ".toFixed(2)" function to format a numeric value as a string with a specified number of decimal places. */
 }
-
