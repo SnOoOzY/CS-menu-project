@@ -7,7 +7,7 @@ function starters() { /* Declares a function for starters */
     var startop = document.getElementById("startersop").value; /* sets the value of startop as the value of the starter option */
 
     if (startop == "tomato soup") {
-        startprice = 2.00; /* If the starter option has the value of tomato soup, set the startprice element to have a value of 2.00 */
+        startprice = 2.00; /* If the starter option has the value of tomato soup, the startprice element is set to have a value of 2.00 */
     } else if (startop == "french onion soup") {
         startprice = 2.50;
     } else if (startop == "tomato salad") {
@@ -22,7 +22,7 @@ function starters() { /* Declares a function for starters */
 }
 
 function mains() {
-    var mainop = document.getElementById("mainsop").value;
+    var mainop = document.getElementById("mainsop").value; /* Sets the value of "mainop" as the value of the starter option */
 
     if (mainop == "german sausage and chips") {
         mainprice = 6.50;
@@ -84,12 +84,12 @@ function snack() {
 }
 
 function total() { /* This function is used to add up all the values of each course, then to display that total value through a HTML element */
-    starters();
+    starters(); /* Declares each function name so it is able to be used within this function */
     mains();
     desserts();
     snack();
 
-    var totalprice = startprice + mainprice + dessertprice + snackprice;
+    var totalprice = startprice + mainprice + dessertprice + snackprice; /* Sets the value of the totalprice element to have the value of all the prices from each course added up */
 
     document.getElementById("totalprice").innerHTML = "£" + totalprice.toFixed(2); /* Finds the "totalprice" element in the HTML code and sets its value to the totalprice value. the ".toFixed(2)" function to format a numeric value as a string with a specified number of decimal places. */
 }
