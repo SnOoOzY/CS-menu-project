@@ -11,26 +11,28 @@
 <script src="main.js"></script>
 
 <h1>Total Price:</h1> <br>
-<div id="totalprice"> 
 
-</div>
+<div id="totalprice"></div>
 
-<input type="text" width="30%" id="startersop" placeholder="starter">
-<div id="startpricedisplay"></div>
+<div id="loggedprice"></div>
+
+<input type="text" style="width:30%" id="startersop" placeholder="starter">
+<input type="text" style="width:5%" id="startermul">
 <br>
 
-<input type="text" width="30%" id="mainsop" placeholder="main">
-<div id="mainpricedisplay"></div>
-<br>
-<input type="text" width="30%" id="dessertsop" placeholder="dessert">
-<div id="dessertpricedisplay"></div>
+<input type="text" style="width:30%" id="mainsop" placeholder="main">
+<input type="text" style="width:5%" id="mainmul">
 <br>
 
-<input type="text" width="30%" id="snacksop" placeholder="snacks"> 
-<div id="snackpricedisplay"></div>
+<input type="text" style="width:30%" id="dessertsop" placeholder="dessert">
+<input type="text" style="width:5%" id="dessertmul">
 <br>
 
-<input type="button" value="submit" id="opsubmit" onclick="starters();mains();desserts();snack();total()">
+<input type="text" style="width:30%" id="snacksop" placeholder="snacks">
+<input type="text" style="width:5%" id="snackmul"> 
+<br>
+
+<input type="button" value="submit" id="opsubmit" onclick="starters();mains();desserts();snack();total();multiple()">
 
 
 </body>
