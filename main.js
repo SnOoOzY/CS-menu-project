@@ -3,6 +3,13 @@ var mainprice = 0; /* Sets mainprice's default value to 0 */
 var dessertprice = 0; /* Sets dessertprice's default value to 0 */
 var snackprice = 0; /* Sets snackprice's default value to 0 */
 
+var selectedStarters = [];
+var selectedMains = [];
+var selectedDesserts = [];
+var selectedSnacks = [];
+
+var totalprice = 0;
+
 function starters() { /* Declares a function for starters */
     var startop = document.getElementById("startersop").value; /* sets the value of startop as the value of the starter option */
     startop.toLowerCase();
@@ -99,12 +106,19 @@ function multiple() {
     snack();
 
     if(!S, !M, !D, !Sn) {
-        return multiple;
+        return;
     } else {
-        startprice * S;
-        mainprice * M;
-        dessertprice * D;
-        snackprice * Sn;
+        startprice *= S;
+        mainprice *= M;
+        dessertprice *= D;
+        snackprice *= Sn;
+
+        selectedStarters.push(S);
+        selectedMains.push(M);
+        selectedDesserts.push(D);
+        selectedSnacks.push(Sn);
+
+        totalprice += (startprice + mainprice + dessertprice + snackprice);
     }
 }
 
@@ -113,8 +127,11 @@ function total() { /* This function is used to add up all the values of each cou
     mains();
     desserts();
     snack();
-
-    var totalprice = startprice + mainprice + dessertprice + snackprice; /* Sets the value of the totalprice element to have the value of all the prices from each course added up */
+    multiple();
 
     document.getElementById("totalprice").innerHTML = "£" + totalprice.toFixed(2); /* Finds the "totalprice" element in the HTML code and sets its value to the totalprice value. the ".toFixed(2)" function is used to format a numeric value as a string with a specified number of decimal places. */
+}
+
+function clear() {
+    location.reload();
 }
